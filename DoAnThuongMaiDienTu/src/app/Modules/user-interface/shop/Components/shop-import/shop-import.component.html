@@ -1,0 +1,37 @@
+<div  class="row">
+
+    <div *ngFor="let product of data" class="col-lg-4 col-md-6 col-sm-6">
+        <div class="product__item">
+            <div class="product__item__pic set-bg">
+                <a routerLink="/user/shop-details/{{product.ID}}"><img src="assets/img/product/{{product.HinhAnh}}" alt=""></a>
+                <ul class="product__hover">
+                    <li><a routerLink="#"><img src="assets/img/icon/heart.png" alt=""><span>Yêu thích</span></a></li>
+                    <!-- <li><a (click)="addToCart(product)" routerLink="#"><img src="assets/img/icon/cart.png" alt=""><span>Giỏ hàng</span></a></li> -->
+                    <li><a [routerLink]="['/user/shop-details/', product.ID]"><img src="assets/img/icon/compare.png" alt=""><span>Chi tiết</span></a></li>
+                </ul>
+            </div>
+            <div class="product__item__text">
+                <h6>{{ product.TenNH }}</h6>
+                <div class="rating">
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <h6>$67.24</h6>
+                <div class="product__color__select">
+                    <label for="pc-4">
+                        <input type="radio" id="pc-4">
+                    </label>
+                    <label class="active black" for="pc-5">
+                        <input type="radio" id="pc-5">
+                    </label>
+                    <label class="grey" for="pc-6">
+                        <input type="radio" id="pc-6">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

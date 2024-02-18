@@ -1,0 +1,52 @@
+<!-- Home Header -->
+<app-header></app-header>
+<!-- Home Header End -->
+
+<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h4>Danh Sách Sản Phẩm Yêu Thích</h4>
+                        <div class="breadcrumb__links">
+                            <a routerLink="/user/home" style="text-decoration: none; color: black;">Trang Chủ</a>
+                            <a routerLink="/user/shop" style="text-decoration: none; color: black;">Cửa Hàng</a>
+                            <span>Sản Phẩm Yêu Thích</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Breadcrumb Section End -->
+
+<!-- Shopping Cart Section Begin -->
+    <section class="shopping-cart spad">
+        <div class="container">
+            <div class="rowư">
+                <div class="col-lg-88">
+
+                  <app-favourite-import></app-favourite-import>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn">
+                                <a routerLink="/user/shop" style="text-decoration: none; color: black;">Tiếp Tục Mua Hàng</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn update__btn">
+                                <a routerLink="#"><i class="fa fa-spinner"></i> Xoá tất cả </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Shopping Cart Section End -->
+
+<!-- Footer -->
+    <app-footer></app-footer>
+<!-- Footer End -->

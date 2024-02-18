@@ -1,0 +1,67 @@
+<div class="skin-blue fixed">
+  <div class="wrapper">
+
+    <app-header-ad> </app-header-ad>
+
+    <div class="content-wrapper">
+      <section class="content-header">
+        <h1>
+          Sản Phẩm
+        </h1>
+        <a routerLink="add-product" class="btn btn-primary">Thêm Sản Phẩm</a>
+
+        <!-- <a href="/admin/qlsp/add-sp">Thêm Sản Phẩm</a> -->
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li><a href="#">Tables</a></li>
+          <li class="active">Data tables</li>
+        </ol>
+      </section>
+      <section class="content">
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="box">
+              <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped ">
+                  <thead>
+                    <tr>
+                      <th>Tên nước hoa</th>
+                      <th>Hình ảnh</th>
+                      <th>Hãng</th>
+                      <th>Giá bán</th>
+                      <th>Số lượng</th>
+                      <th>Tùy chọn</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of data">
+                      <td>{{item.TenNH}}</td>
+                      <td>
+                        <img src="assets/img/product/{{item.HinhAnh}}" style="width: 80px;height: 80px;;" alt="">
+                      </td>
+                      <td>{{item.TenTH}}</td>
+                      <td>{{formatCurrency(item.GiaBan)}}</td>
+                      <td>{{item.Soluong}}</td>
+                      <td>
+                        <a [routerLink]="['edit-product', item.ID]"><i style="margin: 10px; font-size: 18px;"
+                            class="text-warning fa fa-edit"></i></a>
+                        <a (click)="removeProduct(item.ID)"><i style="margin: 10px; font-size: 18px;"
+                            class="text-danger fa fa-trash"></i></a>
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+                </table>
+
+              </div><!-- /.box-body -->
+            </div><!-- /.box -->
+          </div><!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </section>
+    </div>
+
+  </div>
+</div>

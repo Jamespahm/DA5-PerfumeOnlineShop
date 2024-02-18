@@ -1,0 +1,111 @@
+<!-- Home Header -->
+<app-header></app-header>
+<!-- Home Header End -->
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Giỏi Hàng</h4>
+                    <div class="breadcrumb__links">
+                        <a routerLink="/user/home" style="text-decoration: none; color: black;">Trang Chủ</a>
+                        <a routerLink="/user/shop/0" style="text-decoration: none; color: black;">Cửa Hàng</a>
+                        <span>Giỏi Hàng</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<!-- Shopping Cart Section Begin -->
+<section class="shopping-cart spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="shopping__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sản Phẩm</th>
+                                <th>Số Lượng</th>
+                                <th>Đơn Giá</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of cartItems">
+                                <td class="product__cart__item">
+                                    <a routerLink="/user/shop-details/{{item.ID}}">
+
+                                        <div class="product__cart__item__pic">
+                                            <img style="width: 100px;" src="assets/img/product/{{item.HinhAnh}}" alt="">
+                                        </div>
+                                        <div class="product__cart__item__text">
+                                            <h5>{{item.TenNH}}</h5>
+                                            <h6>{{item.Dungtich}}</h6>
+                                        </div>
+                                    </a>
+
+                                </td>
+
+                                <td class="quantity__item">
+
+                                    <div class="quantity">
+                                        <div class="pro-qty-2">
+                                            <button (click)="increaseQuantity(item)">+ </button>
+                                            {{item.quantity}}
+                                            <button (click)="decreaseQuantity(item)"> -</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="cart__price">{{formatCurrency(item.GiaBan) }} </td>
+                                <td (click)="removeFromCart(item)" class="cart__close"><i class="fa fa-close"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="continue__btn ">
+                            <a routerLink="/user/shop/0">Tiếp Tục Mua Sắm</a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn update__btn">
+                                <a routerLink="#"><i class="fa fa-spinner"></i> Cập Nhập </a>
+                            </div>
+                        </div> -->
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="cart__discount">
+                    <h6>Nhập Mã Giảm Giá</h6>
+                    <form action="#">
+                        <input type="text" placeholder="Nhập mã giảm giá">
+                        <button class="primary-btn" type="submit">Áp Dụng </button>
+                    </form>
+                </div>
+                <div class="cart__total">
+                    <h6>Tổng Cộng</h6>
+                    <ul>
+                        <li>Số lượng <span>{{ getTotalQuantity() }}</span></li>
+                        <li>Tổng tiền <span> {{formatCurrency(getTotalAmount()) }} đ</span></li>
+                    </ul>
+                    <!-- <button (click)="navigateToCheckout()">Tiến hành thanh toán</button> -->
+
+                    <a style="text-decoration: none; color: white;" routerLink="/user/checkout" class="primary-btn">Tiến
+                        Hành Thanh Toán</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shopping Cart Section End -->
+
+<!-- Footer -->
+<app-footer></app-footer>
+<!-- Footer End -->

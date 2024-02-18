@@ -1,0 +1,64 @@
+<!-- add-product.component.html -->
+<div class="container mt-4">
+    <h2>Thêm Nước Hoa Mới</h2>
+
+    <form (ngSubmit)="addProduct()" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="tenNH" class="form-label">Tên Nước Hoa:</label>
+            <input type="text" id="tenNH" [(ngModel)]="formData.TenNH" name="tenNH" class="form-control" required>
+            <div class="invalid-feedback">
+                Vui lòng nhập tên sản phẩm.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="giaBan" class="form-label">Giá Bán:</label>
+            <input type="number" id="giaBan" [(ngModel)]="formData.GiaBan" name="giaBan" class="form-control" required>
+            <div class="invalid-feedback">
+                Vui lòng nhập giá bán sản phẩm.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="dungTich" class="form-label">Dung Tích:</label>
+            <input type="text" id="dungTich" [(ngModel)]="formData.Dungtich" name="dungTich" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="hinhAnh" class="form-label">Hình Ảnh:</label>
+            <input type="text" id="hinhAnh" [(ngModel)]="formData.HinhAnh" name="hinhAnh" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="soLuong" class="form-label">Số Lượng:</label>
+            <input type="number" id="soLuong" [(ngModel)]="formData.Soluong" name="soLuong" class="form-control"
+                required>
+            <div class="invalid-feedback">
+                Vui lòng nhập số lượng sản phẩm.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="moTa" class="form-label">Mô Tả:</label>
+            <textarea id="moTa" [(ngModel)]="formData.MoTa" name="moTa" class="form-control" rows="4"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="maTH" class="form-label">Thương Hiệu:</label>
+            <select id="maTH" [(ngModel)]="formData.MaTH" name="maTH" class="form-select">
+                <option *ngFor="let th of thList" [value]="th.IDTH">{{ th.IDTH }}-{{ th.TenTH }}
+                </option>
+            </select>        
+        </div>
+
+        <div class="mb-3">
+            <label for="maL" class="form-label">Loại:</label>
+            <select id="maL" [(ngModel)]="formData.MaL" name="maL" class="form-select">
+                <option *ngFor="let loai of loaiList" [value]="loai.ID">{{ loai.ID }}-{{ loai.TenL }}
+                </option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
+    </form>
+</div>

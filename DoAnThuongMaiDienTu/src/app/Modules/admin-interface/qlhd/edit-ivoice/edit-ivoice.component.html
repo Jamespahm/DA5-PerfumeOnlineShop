@@ -1,0 +1,48 @@
+<!-- add-ivoice.component.html -->
+<div class="container mt-4">
+    <h2>Cập Nhật Hóa Đơn</h2>
+
+    <form (ngSubmit)="updateIvoice()" class="needs-validation" novalidate>
+
+        <div class="mb-3">
+            <label for="maKH">Khách Hàng:</label>
+            <select id="maKH" [(ngModel)]="formData.MaKH" name="maKH" class="form-select">
+                <option *ngFor="let th of khList" [value]="th.ID">{{ th.ID }}-{{ th.TenKH }}
+                </option>
+            </select>        
+        </div>
+        <div class="mb-3">
+            <label for="SDT" class="form-label">Số điện thoại người nhận:</label>
+            <input type="number" id="SDT" [(ngModel)]="formData.SDT" name="SDT" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="DiaChi" class="form-label">Địa chỉ người nhận:</label>
+            <input id="DiaChi" [(ngModel)]="formData.DiaChi" name="DiaChi" class="form-control" required>
+        </div>
+   
+        <div class="mb-3">
+            <label for="soLuong">Số Lượng:</label>
+            <input type="number" id="soLuong" [(ngModel)]="formData.SoLuong" name="soLuong" class="form-control"required>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="ngayDat">Ngày đặt:</label>
+            <input type="date" id="ngayDat" [(ngModel)]="formData.NgayDat" name="ngayDat" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="tongTien">Tổng tiền:</label>
+            <input type="number" id="tongTien" [(ngModel)]="formData.TongTien" name="tongTien" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="TrangThai" class="form-label">Trạng thái đơn hàng:</label>
+            <select id="TrangThai" [(ngModel)]="formData.TrangThai" name="TrangThai" class="form-select">
+                <option>Chờ xác nhận</option>
+                <option>Đang giao hàng</option>
+                <option>Hoàn thành</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Cập Nhật Hóa Đơn</button>
+    </form>
+</div>

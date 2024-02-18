@@ -1,0 +1,68 @@
+<!-- Header Section Begin -->
+  <header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-7">
+                    <div class="header__top__left">
+                        <p>Miễn phí vận chuyển, đảm bảo hoàn trả hoặc hoàn tiền trong 30 ngày.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5">
+                    <div class="header__top__right">
+                        <div class="header__top__links">
+                            <a routerLink="#" style="color: white; text-decoration: none;">VND</a>
+                            <a routerLink="#" style="color: white; text-decoration: none;">FAQs</a>
+                        </div>
+                        <div class="header__top__hover">
+                            <span>Đăng Nhập <i class="arrow_carrot-down"></i></span>
+                            <ul>
+                                <li><p routerLink="/user/login">Đăng Nhập</p></li>
+                                <li><p routerLink="/user/signup">Đăng Ký</p></li>
+                                <li>Đăng Xuất</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="header__logo">
+                    <a routerLink="/"><img class="header_logo" src="assets/img/logo_menu_scroll.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <nav class="header__menu mobile-menu">
+                    <ul>
+                        <li class="active"><a routerLink="/user/home">Trang Chủ</a></li>
+                        <li><a routerLink="/user/shop/0">Cửa Hàng</a></li>
+                        <li><a routerLink="#">Trang</a>
+                            <ul class="dropdown">
+                                <li><a routerLink="/user/about"> Giới Thiệu </a></li>
+                                <li><a routerLink="/user/shop-details/1">CT Sản Phẩm</a></li>
+                                <li><a routerLink="/user/shopping-cart">Giỏ Hàng</a></li>
+                                <li><a routerLink="/user/checkout">Thanh Toán</a></li>
+                                <li><a routerLink="/user/blog">CT Tin Tức</a></li>
+                            </ul>
+                        </li>
+                        <li><a routerLink="/user/blog">Tin Tức</a></li>
+                        <li><a routerLink="/user/contact">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="header__nav__option">
+                    <a routerLink="#" class="search-switch"><img src="assets/img/icon/search.png" alt=""></a>
+                    <a routerLink="/user/favourite"><img src="assets/img/icon/heart.png" alt=""></a>
+                    <a routerLink="/user/shopping-cart"><img src="assets/img/icon/cart.png" alt=""> <span>0</span></a>
+                    <!-- <div class="price">$0.00</div> -->
+                </div>
+            </div>
+        </div>
+        <div class="canvas__open"><i class="fa fa-bars"></i></div>
+    </div>
+  </header>
+<!-- Header Section End -->

@@ -1,0 +1,47 @@
+<!-- add-product.component.html -->
+<div class="container mt-4">
+    <h2>Thêm Chi Tiết Hóa Đơn Mới</h2>
+
+    <form (ngSubmit)="updateIvoiceDetail()" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="maHD" class="form-label">Hóa Đơn:</label>
+            <select id="maHD" [(ngModel)]="formData.MaHD" name="maHD" class="form-select">
+                <option *ngFor="let th of hdList" [value]="th.ID">{{ th.ID }}-{{ th.ID }}
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="TenNH" class="form-label">Tên Nước Hoa:</label>
+            <select id="TenNH" [(ngModel)]="formData.MaNH" name="TenNH" class="form-select">
+                <option *ngFor="let nh of nhList" [value]="nh.ID">{{ nh.ID }}-{{ nh.TenNH }}
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="hinhAnh" class="form-label">Hình Ảnh:</label>
+            <select id="hinhAnh" [(ngModel)]="formData.HinhAnh" name="hinhAnh" class="form-select">
+                <option *ngFor="let nh of nhList" [value]="nh.ID">{{ nh.HinhAnh }}
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="soLuong" class="form-label">Số Lượng:</label>
+            <input type="number" id="soLuong" [(ngModel)]="formData.soLuong" name="soLuong" class="form-control"required>
+
+        </div>
+        <div class="mb-3">
+            <label for="giaBan" class="form-label">Giá Bán:</label>
+            <input type="number" id="giaBan" [(ngModel)]="formData.giaBan" name="giaBan" class="form-control">
+        </div>
+
+
+        <div class="mb-3">
+            <label for="tongTien" class="form-label">Tổng tiền:</label>
+            <input type="number" id="tongTien" [(ngModel)]="formData.tongTien" name="tongTien" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Thêm Hóa Đơn</button>
+    </form>
+</div>

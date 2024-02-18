@@ -1,0 +1,147 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "48ffa777-ba49-460f-a004-c4251d5bb541"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "DoAnThuongMaiDienTu": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "docs",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "./src/assets/css/bootstrap.min.css",
+              "./src/assets/css/font-awesome.min.css",
+              "./src/assets/css/elegant-icons.css",
+              "./src/assets/css/magnific-popup.css",
+              "./src/assets/css/nice-select.css",
+              "./src/assets/css/slicknav.min.css",
+
+              "./src/assets/admin/dataTables.bootstrap.css",
+              "./src/assets/admin/AdminLTE.min.css",
+              "./src/assets/admin/_all-skins.min.css"
+            ],
+            "scripts": [
+              "./node_modules/boxicons/dist/boxicons.js",
+              "./src/assets/js/jquery-3.3.1.min.js",
+              "./src/assets/js/jquery.nice-select.min.js",
+              "./src/assets/js/jquery.nicescroll.min.js",
+              "./src/assets/js/jquery.magnific-popup.min.js",
+              "./src/assets/js/jquery.countdown.min.js",
+              "./src/assets/js/jquery.slicknav.js",
+              "./src/assets/js/mixitup.min.js",
+              "./src/assets/js/owl.carousel.min.js",
+              "./src/assets/js/bootstrap.min.js",
+
+              
+              "./src/assets/admin/jquery.dataTables.js",
+              "./src/assets/admin/dataTables.bootstrap.js",
+              "./src/assets/admin/jquery.slimscroll.min.js",
+              "./src/assets/admin/fastclick.min.js",
+              "./src/assets/admin/app.min.js",
+              "./src/assets/admin/jamess.js",
+              "./src/assets/js/main.js"
+
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "DoAnThuongMaiDienTu:build:production"
+            },
+            "development": {
+              "browserTarget": "DoAnThuongMaiDienTu:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "DoAnThuongMaiDienTu:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "DoAnThuongMaiDienTu"
+}

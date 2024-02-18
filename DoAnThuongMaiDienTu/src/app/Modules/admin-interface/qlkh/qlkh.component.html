@@ -1,0 +1,60 @@
+<div class="skin-blue fixed">
+    <div class="wrapper">
+
+        <app-header-ad> </app-header-ad>
+
+        <div class="content-wrapper">
+
+            <section class="content-header">
+                <h1>
+                    Khách Hàng
+                </h1>
+                <a routerLink="add-customer" class="btn btn-primary">Thêm khách hàng</a>
+
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Tables</a></li>
+                    <li class="active">Data tables</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-body">
+                                <table id="example1" class="table table-bordered table-striped ">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên khách hàng</th>
+                                            <!-- <th>Địa chỉ</th> -->
+                                            <th>Số điện thoại</th>
+                                            <th>Email</th>
+                                            <th>Tùy chọn</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of data">
+                                            <td>{{item.TenKH}}</td>
+                                            <!-- <td>{{item.DiaChi}}</td> -->
+                                            <td>{{item.SoDienThoai}}</td>
+                                            <td>{{item.Email}}</td>
+                                            <td>
+                                                <a [routerLink]="['edit-customer', item.ID]"><i style="margin: 10px; font-size: 18px;"
+                                                    class="text-warning fa fa-edit"></i></a>
+                                                <a (click)="removeCustomer(item.ID)"><i style="margin: 10px; font-size: 18px;"
+                                                    class="text-danger fa fa-trash"></i></a>
+                                              </td>                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div><!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </section>
+        </div>
+    </div>
+
+</div>
